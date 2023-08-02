@@ -1,0 +1,2 @@
+login into container - docker exec -it iem22-httpd-container /bin/bash
+get the conf file from image - docker run --rm iem22-httpd:v1 cat /etc/apache2/apache2.conf > my-httpd.conf
