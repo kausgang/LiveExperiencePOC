@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      type="text/javascript"
+      data-main="lx/js/api-main"
+      src="lx/lib/require.js"
+    ></script>
+  </head>
+  <body>
+    Hi
+
+    <script type="text/javascript">
+      require(["oracle.live.api"], function (liveApi) {});
+    </script>
+
+    <script type="text/javascript">
+      require(["oracle.live.api"], function (liveApi) {
+        const getAuthToken = (callback) => {
+          fetch(new Request("/cgi-enabled/auth.cgi"))
+            .then((response) => {
+              return response.json();
+            })
+            .then((auth) => {
+              callback(auth.access_token, auth.expires_in);
+            });
+        };
+      });
+    </script>
+
+    <script type="text/javascript">
+      require(["oracle.live.api"], function (liveApi) {
+        const getAuthToken = (callback) => {
+          fetch(new Request("/cgi-enabled/auth.cgi"))
+            .then((response) => {
+              return response.json();
+            })
+            .then((auth) => {
+              callback(auth.access_token, auth.expires_in);
+            });
+        };
+        getAuthToken((myAuthToken, myTokenExpiry) => {});
+      });
+    </script>
+
+    <script type="text/javascript">
+      require(["oracle.live.api"], function (liveApi) {
+        const getAuthToken = (callback) => {
+          fetch(new Request("/cgi-enabled/auth.cgi"))
+            .then((response) => {
+              return response.json();
+            })
+            .then((auth) => {
+              callback(auth.access_token, auth.expires_in);
+            });
+        };
+        getAuthToken((myAuthToken, myTokenExpiry) => {
+          liveApi.controller.service.userID = "sadmin@treas.nj.gov";
+          liveApi.controller.service.tenantID = "njpensionslive";
+          liveApi.controller.service.authToken = myAuthToken;
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      require(["oracle.live.api"], function (liveApi) {
+        const getAuthToken = (callback) => {
+          fetch(new Request("/cgi-enabled/auth.cgi"))
+            .then((response) => {
+              return response.json();
+            })
+            .then((auth) => {
+              callback(auth.access_token, auth.expires_in);
+            });
+        };
+        getAuthToken((myAuthToken, myTokenExpiry) => {
+          liveApi.controller.service.userID = "sadmin@treas.nj.gov";
+          liveApi.controller.service.tenantID = "njpensionslive";
+          liveApi.controller.service.authToken = myAuthToken;
+          liveApi.controller.service.authRefresh(myTokenExpiry, () => {
+            getAuthToken((jwt) => {
+              liveApi.controller.service.authToken = jwt;
+            });
+          });
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      require(["oracle.live.api"], function (liveApi) {
+        const getAuthToken = (callback) => {
+          fetch(new Request("/cgi-enabled/auth.cgi"))
+            .then((response) => {
+              return response.json();
+            })
+            .then((auth) => {
+              callback(auth.access_token, auth.expires_in);
+            });
+        };
+        getAuthToken((myAuthToken, myTokenExpiry) => {
+          liveApi.controller.service.userID = "sadmin@treas.nj.gov";
+          liveApi.controller.service.tenantID = "njpensionslive";
+          liveApi.controller.service.authToken = myAuthToken;
+          liveApi.controller.service.authRefresh(myTokenExpiry, () => {
+            app.getAuthToken((jwt) => {
+              liveApi.controller.service.authToken = jwt;
+            });
+          });
+          liveApi.controller.contextAttributes.set(
+            "appLocation",
+            "Scenario Name"
+          );
+          liveApi.controller.addComponent();
+        });
+      });
+    </script>
+  </body>
+</html>
+

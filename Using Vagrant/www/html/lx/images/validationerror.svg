@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Icon/16x16/Error</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icon/16x16/Error" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="Bounds" x="0" y="0" width="16" height="16"/>
+            <path d="M9,11 C9,11.553 8.552,12 8,12 C7.448,12 7,11.553 7,11 C7,10.447 7.448,10 8,10 C8.552,10 9,10.447 9,11 M9,5 L9,8 C9,8.553 8.552,9 8,9 C7.448,9 7,8.553 7,8 L7,5 C7,4.447 7.448,4 8,4 C8.552,4 9,4.447 9,5 M8,0 C3.589,0 0,3.589 0,8 C0,12.411 3.589,16 8,16 C12.411,16 16,12.411 16,8 C16,3.589 12.411,0 8,0" id="Color" fill="red"/>
+        </g>
+    </g>
+</svg>
